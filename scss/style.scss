@@ -1,8 +1,8 @@
 @import "colores";
+@import "fonts";
 
 .navbar-scroll {
     background-color: $buff;
-    /* height: 8vh;  Se rompe en work.html cuando cambio el tamaño de esta manera */
   }
   
   .sticky-top, .fixed-top {
@@ -82,22 +82,17 @@
   /* Colores y fuentes generales */
   
   .titulos {
-    color: $darkCornflowerBlue;
-    font-family: 'Lora', serif;
-    font-size: 2.75em;
-    font-weight: 400;
+    @include fontWeightSizeColor($lora, 400, 2.75em, $darkCornflowerBlue);
   }
   
+  
   .portfolio {
-    font-family: 'Lora', Serif;
+    @include fontWeightSizeColor($lora, 400, 10.5vw, $buff);
     font-style: italic;
-    font-weight: 400;
-    font-size: 10.5vw;
     line-height: 196px;
     width: 100%;
     text-align: center;
     letter-spacing: 0.495em;
-    color: $buff;
     opacity: 0.5;
     z-index: 0;
     margin: 0;
@@ -105,15 +100,12 @@
   }
   
   .portfolioTitle {
-    font-family: 'Lora', Serif;
-    font-weight: 400;
-    font-size: 24px;
+    @include fontWeightSizeColor($lora, 400, 24px, $darkCornflowerBlue);
     width: 100%;
     position: absolute;
     margin-top: -100px;
     text-align: center;
     letter-spacing: 0.3em;
-    color: $darkCornflowerBlue;
     text-transform: lowercase;
     z-index: 1;
   }
@@ -131,23 +123,15 @@
   }
   
   .sub {
-    color: $bittersweet;
-    font-family: 'palanquin', sans-serif;
-    font-weight: 300;
-    font-size: 1.5rem;
+    @include fontWeightSizeColor($palanquin, 300, 1.5rem, $bittersweet);
   }
   
   h3 {
-    color: $darkCornflowerBlue;
-    font-family: 'palanquin', sans-serif;
-    font-weight: 800;
+    @include fontWeightSizeColor($palanquin, 800, auto, $darkCornflowerBlue);
   }
   
   .bajadas {
-    color: $bittersweet;
-    font-family: 'palanquin', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
+    @include fontWeightSizeColor($palanquin, 600, 1rem, $bittersweet);
     margin: 10px 64px 10px 0;
   
     a {
@@ -166,10 +150,7 @@
   }
   
   .titleLink {
-    color: $bittersweet;
-    font-family: 'palanquin', sans-serif;
-    font-weight: 600;
-    font-size: 1.5em;
+    @include fontWeightSizeColor($palanquin, 600, 1.5em, $bittersweet);
     display: block;
     text-align: center;
     margin: 16px 0 24px 0;
@@ -181,43 +162,33 @@
   }
   
   .text {
-    font-family: 'palanquin', sans-serif;
-    font-weight: 400;
-    color: $darkCornflowerBlue;
+    @include fontWeightSizeColor($palanquin, 400, 1em, $darkCornflowerBlue);
   }
   
   li a {
-    font-family: 'palanquin', sans-serif;
-    font-size: 1rem;
+    @include fontWeightSizeColor($palanquin, 400, 1rem, $darkCornflowerBlue);
     text-decoration: none;
-    color: $darkCornflowerBlue;
   }
   
   footer li {
     padding: 10px;
+      a {
+        color: $buff;
+  
+        &:hover {
+          color: $buff;
+        }
+      }
   }
   
   .main {
-    background-color: rgba(245, 221, 144, 0.4);
+    background-color: $buffTransparente;
     margin: 0;
     border-radius: 0 0 500px 500px;
   }
-  
-  footer li a {
-    color: $buff;
-  
-    &:hover {
-      color: $buff;
-    }
-  }
-  
-// Para probar includes
 
   .tag {
-    font-family: 'palanquin', sans-serif;
-    font-weight: 900;
-    font-size: 1rem;
-    color: $darkCornflowerBlue;
+    @include fontWeightSizeColor($palanquin, 900, 1rem, $darkCornflowerBlue);
     padding: 10px;
     border-radius: 100px;
     margin: 16px;
@@ -252,24 +223,22 @@
   }
   
   .botones {
+    @include fontWeightSizeColor($palanquin, 800, auto, $buff);
     background-color: $darkCornflowerBlue;
     border: none;
-    color: $buff;
     padding: 16px 32px;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
-    font-family: 'palanquin', sans-serif;
-    font-weight: 800;
     text-transform: uppercase;
     width: 300px;
     border-radius: 15px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: all 0.5s;
-  }
-  
-  button:hover {
-    transform: scale(1.1, 1.1);
+
+    &:hover {
+      transform: scale(1.1, 1.1);
+    }
   }
   
   .iconosBlue {
@@ -310,7 +279,7 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    font-family: 'Lora', serif;
+    font-family: $lora;
     font-size: 32px;
     color: white;
     background: linear-gradient(rgba(246, 142, 95, 0.8), rgba(246, 142, 95, 0.8)), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
@@ -337,7 +306,7 @@
   
   .contacto {
     background-color: $bittersweet;
-    font-family: 'palanquin', sans-serif;
+    font-family: $palanquin;
     color: $buff;
     text-align: center;
     padding: 50px;
@@ -367,7 +336,7 @@
     width: 100%;
     height: auto;
     color: $buff;
-    font-family: 'palanquin', sans-serif;
+    font-family: $palanquin;
     font-size: 18px;
     background-image: linear-gradient(270deg, rgba(50, 67, 118, 0.9) 30%, rgba(50, 67, 118, 0.2) 100%), url(../img/contact-bg.png);
     text-align: center;
@@ -392,7 +361,7 @@
   .formulario {
     padding: 16px;
     color: $darkCornflowerBlue;
-    font-family: 'palanquin', sans-serif;
+    font-family: $palanquin;
   }
   
   label {
@@ -402,7 +371,7 @@
   textarea {
     width: 100%;
     margin: 8px 0 16px;
-    font-family: 'palanquin', sans-serif;
+    font-family: $palanquin;
   }
   
   input {
@@ -421,32 +390,29 @@
     border: none;
     border-bottom: 1px solid black;
   }
-  
+
   input {
-    &[type=button], &[type=submit] {
-      background-color: $darkCornflowerBlue;
-      border: none;
-      color: $buff;
-      padding: 16px 32px;
-      text-decoration: none;
-      margin: 4px 2px;
-      cursor: pointer;
-      font-family: 'palanquin', sans-serif;
-      font-weight: 800;
-      text-transform: uppercase;
+    &[type=button] {
+      @include fontWeightSizeColor($palanquin, 800, auto, auto);
+      @extend .botones;
       width: 100%;
+
+        &:hover {
+          transform: scale(1, 1);
+        }
+    }
+    
+    &[type=submit] {
+      @extend [type=button];
+      background-color: $darkCornflowerBlue;
+      color: $buff;
     }
   
-    &[type=button], &[type=reset] {
+    &[type=reset] {
+      @extend [type=button];
+      background-color: #FFFFFF;
       border: 1px solid $darkCornflowerBlue;
       color: $darkCornflowerBlue;
-      padding: 16px 32px;
-      text-decoration: none;
-      margin: 4px 2px;
-      cursor: pointer;
-      font-family: 'palanquin', sans-serif;
-      font-weight: 800;
-      text-transform: uppercase;
     }
   }
   
@@ -491,9 +457,7 @@
     align-items: flex-start;
   
     h3 {
-      font-family: 'Palanquin', sans-serif;
-      font-weight: 800;
-      font-size: 2em;
+      @include fontWeightSizeColor($palanquin, 800, 2em, auto);
       line-height: 45px;
       margin: 0 8px 32px 16px;
     }

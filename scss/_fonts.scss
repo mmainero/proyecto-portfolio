@@ -1,0 +1,11 @@
+// Tipografías 
+
+$palanquin: 'palanquin', sans-serif;
+$lora: 'Lora', Serif;
+
+@mixin fontWeightSizeColor ($font, $weight, $size, $color) {
+    font-family: $font;
+    font-weight: $weight;
+    font-size: $size;
+    color: $color;
+  }
