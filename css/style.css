@@ -372,9 +372,7 @@ input[type=reset] {
   height: 360px;
   box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
   cursor: pointer;
-  transition: 0.4s;
-  /* Gradiente sobre la imagen, viendo que funcione */
-  background-color: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%); }
+  transition: 0.4s; }
   .card a > * {
     position: absolute;
     width: 100%;
@@ -399,7 +397,8 @@ input[type=reset] {
   width: auto;
   height: 100%;
   display: block;
-  opacity: 0.5; }
+  opacity: 0.5;
+  filter: blur(4px); }
 
 .card:hover {
   transform: scale(0.95, 0.95);
